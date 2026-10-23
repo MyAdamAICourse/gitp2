@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>שלוש אבנים · זירת הקרח</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Secular+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="frost" aria-hidden="true"></div>
+    <main class="arena">
+      <header class="mast">
+        <p class="kicker">זירת הקרח</p>
+        <h1>שלוש אבנים</h1>
+        <p class="sub" id="status">תורך — לכל שחקן רק שלוש אבנים</p>
+      </header>
+
+      <p class="hint">
+        אחרי שלוש אבנים, האבן הישנה ביותר נמסה. המשבצת הדהויה היא הבאה להיעלם.
+      </p>
+
+      <section class="scoreboard" aria-label="ניקוד">
+        <div class="chip o">
+          <span class="chip-mark">○</span>
+          <span class="chip-label" id="label-o">אתה</span>
+          <strong id="score-o">0</strong>
+        </div>
+        <div class="chip draw">
+          <span class="chip-label">תיקו</span>
+          <strong id="score-d">0</strong>
+        </div>
+        <div class="chip x">
+          <span class="chip-mark">✕</span>
+          <span class="chip-label" id="label-x">מחשב</span>
+          <strong id="score-x">0</strong>
+        </div>
+      </section>
+
+      <div class="board-wrap">
+        <div class="board" id="board" role="grid" aria-label="לוח המשחק">
+          <button class="cell" data-i="0" role="gridcell" aria-label="משבצת 1"></button>
+          <button class="cell" data-i="1" role="gridcell" aria-label="משבצת 2"></button>
+          <button class="cell" data-i="2" role="gridcell" aria-label="משבצת 3"></button>
+          <button class="cell" data-i="3" role="gridcell" aria-label="משבצת 4"></button>
+          <button class="cell" data-i="4" role="gridcell" aria-label="משבצת 5"></button>
+          <button class="cell" data-i="5" role="gridcell" aria-label="משבצת 6"></button>
+          <button class="cell" data-i="6" role="gridcell" aria-label="משבצת 7"></button>
+          <button class="cell" data-i="7" role="gridcell" aria-label="משבצת 8"></button>
+          <button class="cell" data-i="8" role="gridcell" aria-label="משבצת 9"></button>
+        </div>
+        <svg class="win-line" id="winLine" viewBox="0 0 100 100" aria-hidden="true">
+          <line id="winSeg" x1="0" y1="0" x2="0" y2="0" />
+        </svg>
+      </div>
+
+      <div class="controls">
+        <fieldset class="mode">
+          <legend>מצב משחק</legend>
+          <label>
+            <input type="radio" name="mode" value="ai" checked />
+            נגד מחשב
+          </label>
+          <label>
+            <input type="radio" name="mode" value="pvp" />
+            שני שחקנים
+          </label>
+        </fieldset>
+        <div class="actions">
+          <button type="button" class="ghost" id="undo" disabled>מהלך אחורה</button>
+          <button type="button" class="solid" id="reset">סיבוב חדש</button>
+        </div>
+        <p class="mode-link"><a href="index.html">חזרה לאיקס עיגול הקלאסי</a></p>
+      </div>
+    </main>
+    <script src="game-slide.js"></script>
+  </body>
+</html>
