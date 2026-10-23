@@ -25,7 +25,8 @@ body {
     radial-gradient(1200px 700px at 80% -10%, #184056 0%, transparent 55%),
     radial-gradient(900px 600px at -10% 110%, #0c3a4e 0%, transparent 50%),
     linear-gradient(165deg, #041018 0%, #0a1d28 48%, #07141c 100%);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .frost {
@@ -323,14 +324,6 @@ button.solid {
 
 .cell.leaving {
   box-shadow: inset 0 0 0 1px rgba(255, 177, 74, 0.35);
-}
-
-.hint {
-  margin: 0;
-  text-align: center;
-  font-size: 0.86rem;
-  color: rgba(215, 244, 255, 0.62);
-  line-height: 1.45;
 }
 
 @media (max-width: 420px) {
